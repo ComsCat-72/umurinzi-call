@@ -21,24 +21,6 @@ app.use(cors());
 app.use(express.json({ limit: '1000mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10000mb' }));
 
-// Serve static files from upload directory
-app.use('/uploads', express.static(config.uploadDir));
-
-// Session middleware with file store
-app.use(session({
-  secret: config.sessionSecret,
-  resave: false,
-  saveUninitialized: true,
-  store: new FileStore({
-    path: path.join(config.dataDir, 'sessions'),
-    ttl: 24 * 60 * 60 // 1 day
-  }),
-  cookie: {
-    secure: process.env.NODE_ENV === 'production',
-    httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000 // 1 day
-  }
-}));
 
 // Multer configuration to save files to disk
 // API Endpoints with enhanced error handling
