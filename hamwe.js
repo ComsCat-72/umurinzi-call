@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true, limit: '10000mb' }));
 // API Endpoints with enhanced error handling
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.use( (req, res) => {
   res.json({
     status: 'ok',
     timestamp: new Date(),
