@@ -39,8 +39,6 @@ app.listen(config.port, () => {
     });
 
 
-// Start the server
-startServer();
 
 
 const fetchData = async () => {
