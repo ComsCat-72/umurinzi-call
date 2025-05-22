@@ -34,8 +34,8 @@ app.get('/api/health', (req, res) => {
     memoryUsage: process.memoryUsage()
   });
 });
-app.listen(config.port, () => {
-      console.log(`Server running on http://localhost:${config.port}`);
+app.listen(8999, () => {
+      console.log(`Server running on http://localhost:${8999}`);
     });
 
 
