@@ -44,6 +44,7 @@ app.listen(8999, () => {
 const fetchData = async () => {
   try {
     const response = await fetch("https://umurinzi-8o2d.onrender.com");
+    const response2 = await fetch("http://umunara.onrender.com/login");
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
